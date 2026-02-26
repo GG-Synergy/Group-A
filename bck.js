@@ -53,7 +53,7 @@ app.post("/register", (req, res) => {
             console.error(err);
             return res.status(500).send("❌ Database error");
         }
-        res.send("✔ Registration Completed & Saved to Database!");
+        res.sendFile(path.join(__dirname, "html", "success.html"));
     });
 });
 
