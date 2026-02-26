@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "mysql2": "^3.18.1"
   },
   "name": "gg-synergy-_prac-5",
   "version": "1.0.0",
