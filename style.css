@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #0b111e; /* Dark background from the image */
+    background-color: #0b111e; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@ body {
     margin: 0;
 }
 
-/* Main Container */
+
 .container {
     width: 400px;
     padding: 40px;
@@ -23,12 +23,12 @@ body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
-    /* --- ADD THESE TWO LINES FOR THE GREEN CIRCLE EFFECT --- */
-    border: 1px solid rgba(0, 255, 255, 0.3); /* The transparent border line */
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2); /* The glowing outer box effect */
+    
+    border: 1px solid rgba(0, 255, 255, 0.3); 
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
 }
 
-/* Heading */
+
 .container h1 {
     color: #ffffff;
     text-align: center;
@@ -38,7 +38,7 @@ body {
     text-shadow: 0 0 6px rgba(255,255,255,0.4);
 }
 
-/* Labels */
+
 label {
     display: block;
     color: #00ffff;
@@ -47,54 +47,54 @@ label {
     font-size: 14px;
 }
 
-/* TEXT INPUT + SELECT */
+
 input[type="text"],
 select {
     width: 100%;
     padding: 10px;
     background-color: #0f1f2e;
-    border: 2px solid #00ffff;   /* Strong outer border */
+    border: 2px solid #00ffff;   
     border-radius: 6px;
     color: white;
     outline: none;
     transition: 0.3s ease;
 }
 
-/* Focus Effect (Outer + Inner Glow) */
+
 input[type="text"]:focus,
 select:focus {
     border: 2px solid #00ffff;
 
-    /* OUTER GLOW */
+    
     box-shadow: 
         0 0 10px #00ffff,
 
-        /* INNER GLOW */
+       
         inset 0 0 8px #00ffff;
 
     outline: none;
 }}
 
-/* Radio & Checkbox */
+
 input[type="radio"],
 input[type="checkbox"] {
     margin-right: 8px;
     margin-top: 10px;
 }
 
-/* Remove outline everywhere */
+
 input,
 select,
 button {
     outline: none;
 }
 
-/* Dropdown options */
+
 select option {
     background: #1c2b3f;
 }
 
-/* Buttons */
+
 button {
     margin-top: 20px;
     padding: 10px 20px;
@@ -104,20 +104,20 @@ button {
     font-weight: bold;
 }
 
-/* Register Button */
+
 .register-btn {
     background: transparent;
     color: #00ffff;
 }
 
-/* Clear Button */
+
 .clear-btn {
     background: #ff3b6b;
     color: white;
     margin-left: 15px;
 }
 
-/* Button focus (no outer box, just clean look) */
+
 button:focus {
     box-shadow: 0 0 8px #00ffff;
 }
