@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+    <meta charset="UTF-8">
+
+    <!-- Connecting External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Student Registration</h2>
+
+    <form onsubmit="showSuccess(event)">
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name">
+        </div>
+
+        <div class="form-group">
+            <label>Roll No</label>
+            <input type="text" name="roll">
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="inline-options">
+                <label><input type="radio" name="gender"> Male</label>
+                <label><input type="radio" name="gender"> Female</label>
+                <label><input type="radio" name="gender"> Others</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Course</label>
+            <select>
+                <option>BCA</option>
+                <option>BSc IT</option>
+                <option>B.Tech</option>
+                <option>B.Com</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Hobbies</label>
+            <div class="inline-options">
+                <label><input type="checkbox"> Reading</label>
+                <label><input type="checkbox"> Sports</label>
+                <label><input type="checkbox"> Music</label>
+                <label><input type="checkbox"> Gaming</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+    <label>Address</label>
+    <textarea placeholder=></textarea>
+</div>
+
+        <div class="button-group">
+            <input type="submit" value="Register">
+            <input type="reset" value="Clear">
+        </div>
+
+    </form>
+</div>
+
+<script>
+function showSuccess(event){
+    event.preventDefault();
+
+    const name = document.querySelector("input[name='name']").value;
+    const roll = document.querySelector("input[name='roll']").value;
+
+    // 👇 ADDING IT HERE (inside the function)
+    const gender = document.querySelector("input[name='gender']:checked") 
+        ? document.querySelector("input[name='gender']:checked").parentElement.innerText 
+        : "";
+
+    const course = document.querySelector("select").value;
+    const address = document.querySelector("textarea").value;
+
+    const student = {
+        name,
+        roll,
+        gender,
+        course,
+        address
+    };
+
+    let students = JSON.parse(localStorage.getItem("students")) || [];
+    students.push(student);
+    localStorage.setItem("students", JSON.stringify(students));
+
+    alert("Registration Successful!");
+}
+</script>
+
+</body>
+</html>
