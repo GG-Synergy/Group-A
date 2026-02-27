@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "express": "^5.2.1",
+    "mysql2": "^3.18.1"
+  },
+  "name": "gg-synergy-_prac-5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "moa.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GG-Synergy/Group-A.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/GG-Synergy/Group-A/issues"
+  },
+  "homepage": "https://github.com/GG-Synergy/Group-A#readme"
+}

@@ -1,0 +1,58 @@
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Student Registration</h1>
+
+    
+    <form action="/register" method="POST">
+
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        
+        <label for="roll">Roll No:</label>
+        <input type="text" id="roll" name="roll" required>
+
+       
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Others"> Others
+
+     
+        <label for="course">Course:</label>
+        <select name="course" required>
+            <option value="BCA">BCA</option>
+            <option value="BSc">BSc</option>
+            <option value="BTech">BTech</option>
+        </select>
+
+        
+        <label>Hobbies:</label>
+        <input type="checkbox" name="hobbies" value="Reading"> Reading
+        <input type="checkbox" name="hobbies" value="Sports"> Sports
+        <input type="checkbox" name="hobbies" value="Music"> Music
+        <input type="checkbox" name="hobbies" value="Gaming"> Gaming
+
+        
+        <label for="address">Address:</label>
+        <textarea name="address" required></textarea>
+
+        <br><br>
+        <button type="submit">REGISTER</button>
+        <button type="reset">Clear</button>
+
+    </form>
+</div>
+
+</body>
+</html>
