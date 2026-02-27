@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #1a2a6c, #000); 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    
+  
+    width: 700px; 
+    padding: 100px 60px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+
+h1 {
+    color: white;
+    font-size: 4rem; 
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+
+p {
+    color: rgba(255, 255, 255, 0.5); 
+    font-size: 1.4rem;
+    margin-bottom: 60px;
+    font-weight: 300;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+}
+
+.btn {
+    padding: 22px 50px; 
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    
+    
+    background: #f0f4ff; 
+    color: #1a2a6c;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background: #ffffff;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+}
+
+.btn:active {
+    animation: blink-press 0.2s ease-in-out;
+    transform: scale(0.95);
+}
+
+@keyframes blink-press {
+    0% { background-color: #f0f4ff; }
+    50% { background-color: #00ffff; } 
+    100% { background-color: #ffffff; }
+}
