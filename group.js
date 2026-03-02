@@ -4,9 +4,9 @@ function showSuccess(event) {
     // Get form values
     const name = document.querySelector('input[name="name"]').value.trim();
     const roll = document.querySelector('input[name="roll"]').value.trim();
-    const dateofbirth =document.querySelector('input[name="Day"]').value.trim();
-    const dateofbirth =document.querySelector('input[name="Month"]').value.trim();
-    const dateofbirth =document.querySelector('input[name="Year"]').value.trim();
+    const day = document.querySelector('select[name="day"]').value;
+    const month = document.querySelector('select[name="month"]').value;
+    const year = document.querySelector('select[name="year"]').value;
     const gender = document.querySelector('input[name="gender"]:checked');
     const course = document.querySelector('select').value;
     const hobbies = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
