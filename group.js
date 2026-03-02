@@ -41,9 +41,7 @@ function showSuccess(event) {
         
         Name: ${name}
         Roll No: ${roll}
-        Date of Birth: ${Day}
-        Date of Birth: ${Month}
-        Date of Birth: ${Year}
+        Date of Birth: ${day}/${month}/${year}
         Gender: ${gender.value || gender.nextSibling.textContent.trim()}
         Course: ${course}
         Hobbies: ${hobbies.join(', ')}
