@@ -22,7 +22,7 @@
         <label for="roll">Roll No:</label>
         <input type="text" id="roll" name="roll" required><br><br>
         
-        <td>Date Of Birth</td>
+        <label>Date Of Birth</label>
                 <td>
                     <select name="dob" id="Birthday_Day">
                         <option value="-1">Day:</option>
@@ -121,12 +121,12 @@
                     </select>
                 </td>
             </tr>
-       
+        <div class="gender">
         <label>Gender:</label>
         <input type="radio" name="gender" value="Male" required> Male
         <input type="radio" name="gender" value="Female"> Female
         <input type="radio" name="gender" value="Others"> Others
-
+        </div>
      
         <label for="course">Course:</label>
         <select name="course" required>
@@ -143,18 +143,18 @@
 
         
         <label>Hobbies:</label>
-        <input type="checkbox" name="hobbies" value="Reading"> Reading
-        <input type="checkbox" name="hobbies" value="Sports"> Sports
-        <input type="checkbox" name="hobbies" value="Music"> Music
-        <input type="checkbox" name="hobbies" value="Gaming"> Gaming
-
+        <input type="checkbox" name="hobbies" value="Reading"> <span style="color: white;">Reading</span>
+        <input type="checkbox" name="hobbies" value="Sports"> <span style="color: white;">Sports</span>
+        <input type="checkbox" name="hobbies" value="Music"> <span style="color: white;">Music</span>
+        <input type="checkbox" name="hobbies" value="Gaming"><span style="color: white;">Gaming</span>
+        </label>
         
         <label for="address">Address:</label>
         <textarea name="address" required></textarea>
 
         <br><br>
-        <button type="submit">REGISTER</button>
-        <button type="reset">Clear</button>
+        <button type="submit" class="register-btn">REGISTER</button>
+        <button type="reset" class="clear-btn">Clear</button>
 
     </form>
 </div>
