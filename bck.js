@@ -25,11 +25,6 @@ db.connect((err) => {
     else console.log("✅ Connected to MySQL database");
 });
 
-// Serve registration.html at "/"
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "html", "index.html"));
-});
-
 // Handle form submissions
 app.post("/register", (req, res) => {
     const { name, roll, gender, course, hobbies, address } = req.body;
@@ -40,7 +35,7 @@ app.post("/register", (req, res) => {
     }
 
     // Convert hobbies array to string if needed
-    const hobbiesStr = Array.isArray(hobbies) ? hobbies.join(", ") : hobbies;
+    const hobbiesStr = Array.isArray(hobbies) && hobbies.length ? hobbies.join(", ") : "None";
 
     // SQL query
     const sql = `
@@ -53,7 +48,7 @@ app.post("/register", (req, res) => {
             console.error(err);
             return res.status(500).send("❌ Database error");
         }
-        res.sendFile(path.join(__dirname, "html", "success.html"));
+        res.redirect("/success.html");
     });
 });
 
