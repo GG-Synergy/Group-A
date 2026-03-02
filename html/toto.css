@@ -46,8 +46,11 @@ p {
 }
 
 .btn {
-    padding: 22px 50px; 
-    font-size: 1.3rem;
+    background: #00FFCC;
+    color: #1a2a6c;
+
+    padding: 25px 60px; 
+    font-size: 1.5rem;
     font-weight: bold;
     border-radius: 15px;
     border: none;
@@ -61,7 +64,7 @@ p {
 }
 
 .btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     background: #ffffff;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
 }
@@ -69,6 +72,44 @@ p {
 .btn:active {
     animation: blink-press 0.2s ease-in-out;
     transform: scale(0.95);
+}
+
+
+.custom-btn {
+    background-color: #00ffcc !important; 
+    color: #1a2a6c;                      
+    padding: 18px 40px;                  
+    font-size: 1.2rem;                   
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;                        
+    transition: 0.3s;
+}
+/* --- Add this at the very end of your CSS file --- */
+
+.btn {
+    background-color: #00ffcc !important; /* That bright teal/green color */
+    color: #1a2a6c !important;           /* Dark text so you can read it */
+    padding: 20px 50px !important;       /* This makes them MUCH BIGGER */
+    font-size: 1.3rem !important;        /* Larger text */
+    font-weight: bold !important;
+    border: none !important;
+    border-radius: 12px !important;
+    cursor: pointer;
+    margin: 10px;                        /* Space between buttons */
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: white !important;  /* Turns white when you mouse over */
+    transform: scale(1.1);               /* Pops out slightly */
+}
+
+.custom-btn:hover {
+    background-color: white !important;
+    transform: scale(1.05);
 }
 
 @keyframes blink-press {
