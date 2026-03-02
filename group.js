@@ -4,6 +4,9 @@ function showSuccess(event) {
     // Get form values
     const name = document.querySelector('input[name="name"]').value.trim();
     const roll = document.querySelector('input[name="roll"]').value.trim();
+    const dateofbirth =document.querySelector('input[name="Day"]').value.trim();
+    const dateofbirth =document.querySelector('input[name="Month"]').value.trim();
+    const dateofbirth =document.querySelector('input[name="Year"]').value.trim();
     const gender = document.querySelector('input[name="gender"]:checked');
     const course = document.querySelector('select').value;
     const hobbies = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
@@ -38,6 +41,9 @@ function showSuccess(event) {
         
         Name: ${name}
         Roll No: ${roll}
+        Date of Birth: ${Day}
+        Date of Birth: ${Month}
+        Date of Birth: ${Year}
         Gender: ${gender.value || gender.nextSibling.textContent.trim()}
         Course: ${course}
         Hobbies: ${hobbies.join(', ')}
