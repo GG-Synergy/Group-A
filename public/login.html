@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Login - Student Portal</title>
+    <link rel='stylesheet' href='style.css'>
+    <style>
+        .login-box {
+            width: 380px; padding: 40px; border-radius: 20px;
+            background: rgba(28,43,63,0.6); backdrop-filter: blur(10px);
+            border: 1px solid rgba(0,255,255,0.3); box-shadow: 0 0 20px rgba(0,255,255,0.2);
+        }
+        .login-box h1 { color:#fff; text-align:center; font-size:28px; font-weight:700; margin-bottom:30px; text-shadow:0 0 6px rgba(255,255,255,0.4); }
+        .input-group { margin-bottom:18px; }
+        .input-group label { display:block; color:#00ffcc; margin-bottom:6px; font-size:14px; }
+        .input-group input { width:100%; padding:10px; background-color:#0f1f2e; border:2px solid #00ffff; border-radius:6px; color:white; outline:none; transition:0.3s; box-sizing:border-box; }
+        .input-group input:focus { box-shadow:0 0 10px #00ffff,inset 0 0 8px rgba(0,255,255,0.2); }
+        .login-btn-full { width:100%; padding:12px; background-color:#00bcd4; color:white; border:none; border-radius:6px; font-size:16px; font-weight:bold; cursor:pointer; margin-top:10px; transition:0.3s; }
+        .login-btn-full:hover { background-color:#00e5ff; box-shadow:0 0 12px #00ffff; }
+        .back-link { display:block; text-align:center; margin-top:16px; color:#888; font-size:13px; text-decoration:none; transition:0.3s; }
+        .back-link:hover { color:#00ffcc; }
+        #loginPopup { display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#1c2b3f; border:1px solid #00ffff; border-radius:12px; padding:30px; color:white; z-index:999; text-align:center; min-width:260px; box-shadow:0 0 20px #00ffff; }
+        #loginPopup button { margin-top:15px; padding:8px 24px; background:#00bcd4; color:white; border:none; border-radius:6px; cursor:pointer; font-weight:bold; }
+    </style>
+</head>
+<body>
+<div class='login-box'>
+    <h1>Student Login</h1>
+    <form id='loginForm' onsubmit='handleLogin(event)'>
+        <div class='input-group'>
+            <label for='loginRoll'>Roll No:</label>
+            <input type='text' id='loginRoll' name='roll' placeholder='Enter your roll number' required>
+        </div>
+        <div class='input-group'>
+            <label for='loginPassword'>Password:</label>
+            <input type='password' id='loginPassword' name='password' placeholder='Enter your password' required>
+        </div>
+        <button type='submit' class='login-btn-full'>LOGIN</button>
+    </form>
+    <a href='index.html' class='back-link'>Back to Home</a>
+</div>
+<div id='loginPopup'>
+    <p id='loginPopupMsg'></p>
+    <button onclick="document.getElementById('loginPopup').style.display='none'">OK</button>
+</div>
+<script>
+    function handleLogin(e) {
+        e.preventDefault();
+        const roll = document.getElementById('loginRoll').value.trim();
+        const password = document.getElementById('loginPassword').value;
+        if (!roll) { showLoginPopup('Please enter your Roll No.'); return; }
+        if (!password) { showLoginPopup('Please enter your Password.'); return; }
+        if (password.length < 6) { showLoginPopup('Password must be at least 6 characters.'); return; }
+        window.location.href = 'home.html';
+    }
+    function showLoginPopup(msg) {
+        document.getElementById('loginPopupMsg').textContent = msg;
+        document.getElementById('loginPopup').style.display = 'block';
+    }
+</script>
+</body>
+</html>
