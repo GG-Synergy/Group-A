@@ -16,7 +16,7 @@ app.use(express.static("html"));
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",         
-    password: "sqlroot11",      
+    password: "root",      
     database: "student_db" 
 });
 
@@ -27,10 +27,10 @@ db.connect((err) => {
 
 // Handle form submissions
 app.post("/register", (req, res) => {
-    const { name, roll, gender, course, hobbies, address } = req.body;
+    const { name, roll, dateofbirth, gender, course, hobbies, address } = req.body;
 
     // Backend validation
-    if (!name || !roll || !gender || !hobbies || !address) {
+    if (!name || !roll ||!dateofbirth || !gender || !hobbies || !address) {
         return res.status(400).send("❌ Registration Failed! Fill all required fields.");
     }
 
@@ -39,11 +39,11 @@ app.post("/register", (req, res) => {
 
     // SQL query
     const sql = `
-        INSERT INTO students (name, roll, gender, course, hobbies, address)
+        INSERT INTO students (name, roll, date of birth, gender, course, hobbies, address)
         VALUES (?, ?, ?, ?, ?, ?)
     `;
 
-    db.query(sql, [name, roll, gender, course, hobbiesStr, address], (err, result) => {
+    db.query(sql, [name, roll, dateofbirth, gender, course, hobbiesStr, address], (err, result) => {
         if (err) {
             console.error(err);
             return res.status(500).send("❌ Database error");
