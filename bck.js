@@ -16,7 +16,7 @@ app.use(express.static("html"));
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",         
-    password: "root",      
+    password: "sqlroot11",      
     database: "student_db" 
 });
 
