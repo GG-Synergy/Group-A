@@ -18,10 +18,13 @@ body {
 .container {
     width: 400px;
     padding: 40px;
+    padding-top: 30px;
     border-radius: 20px;
     background: rgba(28, 43, 63, 0.6);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    margin-top: 50px;
+    border-top: 2px solid rgba(0, 255, 255, 0.8);
 
     
     border: 1px solid rgba(0, 255, 255, 0.3); 
@@ -161,4 +164,27 @@ button:focus {
     color: #00ffff;
     font-size: 20px;
     animation: fadeIn 1s ease-in-out;
+}
+.button-container {
+    display: flex;
+    gap: 20px; 
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.go-back { background-color: #008000; color: white; }
+.login-btn { background-color: #00bcd4; color: white; }
+
+.btn:hover { 
+    transform: scale(1.15); 
+    opacity: 1;
 }

@@ -13,7 +13,7 @@ function showSuccess(event) {
         .map(cb => cb.nextSibling.textContent.trim());
     const address = document.querySelector('textarea').value.trim();
 
-    // Validation
+    
     if (!name) {
         showPopup('Please enter your name');
         return;
@@ -60,3 +60,23 @@ function showPopup(message) {
 function closePopup() {
     document.getElementById('popup').style.display = 'none';
 }
+// You can add client-side validation if needed
+document.addEventListener('DOMContentLoaded', () => {
+    const registerForm = document.getElementById('registerForm');
+    if(registerForm){
+        registerForm.addEventListener('submit', (e) => {
+            const password = registerForm.password.value;
+            if(password.length < 6){
+                e.preventDefault();
+                alert('Password must be at least 6 characters');
+            }
+        });
+    }
+
+    const loginForm = document.getElementById('loginForm');
+    if(loginForm){
+        loginForm.addEventListener('submit', (e) => {
+            // Can add client validation here
+        });
+    }
+});
