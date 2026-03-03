@@ -40,7 +40,7 @@ app.post("/login", (req, res) => {
         return res.status(400).send("Please fill all fields.");
     }
     // Look up student by roll number
-    db.query("SELECT * FROM students WHERE roll = ?", [roll], (err, results) => {
+    db.query("SELECT * FROM students WHERE roll_no = ?", [roll], (err, results) => {
         if (err) return res.status(500).send("Database error");
         if (results.length === 0) {
             return res.status(401).send("Invalid Roll No or Password.");
@@ -50,6 +50,9 @@ app.post("/login", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
+
+    console.log("BODY DATA:", req.body);
+
     // FIX: form sends day/month/year separately — was wrongly reading "dateofbirth"
     const { name, roll, day, month, year, gender, course, hobbies, address } = req.body;
 
@@ -63,15 +66,16 @@ app.post("/register", (req, res) => {
         return res.status(400).send("Registration Failed! Select a complete date of birth.");
     }
 
-    // FIX: assemble dateofbirth from the three separate fields
-    const dateofbirth = day + "/" + month + "/" + year;
+     // ✅ Assemble dateofbirth in correct MySQL format (YYYY-MM-DD)
+    const dateofbirth = `${year}-${month.padStart(2,'0')}-${day.padStart(2,'0')}`;
+
 
     // Convert hobbies array to string if needed
     const hobbiesStr = Array.isArray(hobbies) && hobbies.length ? hobbies.join(", ") : "None";
 
     // SQL query
     const sql = `
-        INSERT INTO students (name, roll, date_of_birth, gender, course, hobbies, address)
+        INSERT INTO students (name, roll_no, date_of_birth, gender, course, hobbies, address)
         VALUES (?, ?, ?, ?, ?, ?, ?)
     `;
 
